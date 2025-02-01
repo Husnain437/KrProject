@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.example.org/cybersecurity#"
+     xml:base="http://www.example.org/cybersecurity"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <owl:Ontology rdf:about="http://www.example.org/cybersecurity"/>
+
+    <!-- Main Classes -->
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#CyberSecurityConcept"/>
+    
+    <!-- Threat-related Classes -->
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Threat">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#CyberSecurityConcept"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Vulnerability">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#CyberSecurityConcept"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Risk">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#CyberSecurityConcept"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Attack">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Threat"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Malware">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Attack"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Ransomware">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Malware"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Phishing">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Attack"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#DenialOfService">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Attack"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#ZeroDayAttack">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Attack"/>
+    </owl:Class>
+    
+    <!-- Risk-related Classes -->
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#SecurityRisk">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Risk"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#OperationalRisk">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Risk"/>
+    </owl:Class>
+    
+    <!-- Vulnerability-related Classes -->
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#SoftwareVulnerability">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Vulnerability"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#HardwareVulnerability">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Vulnerability"/>
+    </owl:Class>
+    
+    <!-- Asset-related Classes -->
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Asset">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#CyberSecurityConcept"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Hardware">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Asset"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Software">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Asset"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Data">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Asset"/>
+    </owl:Class>
+    
+    <!-- Countermeasure-related Classes -->
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Countermeasure">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#CyberSecurityConcept"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Firewall">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Countermeasure"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Encryption">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Countermeasure"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#Antivirus">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Countermeasure"/>
+    </owl:Class>
+    <owl:Class rdf:about="http://www.example.org/cybersecurity#MultiFactorAuthentication">
+        <rdfs:subClassOf rdf:resource="http://www.example.org/cybersecurity#Countermeasure"/>
+    </owl:Class>
+    
+    <!-- Instances (Individuals) -->
+    <!-- Instances of Threat-related Classes -->
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#SQLInjectionAttack">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Attack"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#TrojanVirus">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Malware"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#EmailPhishing">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Phishing"/>
+    </rdf:Description>
+    
+    <!-- Instances of Risk-related Classes -->
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#NetworkSecurityRisk">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#SecurityRisk"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#OperationalDowntimeRisk">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#OperationalRisk"/>
+    </rdf:Description>
+    
+    <!-- Instances of Vulnerability-related Classes -->
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#OutdatedSSLVersion">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#SoftwareVulnerability"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#UnpatchedFirmware">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#HardwareVulnerability"/>
+    </rdf:Description>
+    
+    <!-- Instances of Asset-related Classes -->
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#CompanyDatabase">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Data"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#EmployeeLaptop">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Hardware"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#CompanySoftwareSuite">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Software"/>
+    </rdf:Description>
+    
+    <!-- Instances of Countermeasure-related Classes -->
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#NetworkFirewall">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Firewall"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#AES256Encryption">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Encryption"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#SymantecAntivirus">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#Antivirus"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#GoogleAuthenticatorMFA">
+        <rdf:type rdf:resource="http://www.example.org/cybersecurity#MultiFactorAuthentication"/>
+    </rdf:Description>
+
+    <!-- Disjoint Classes -->
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#Threat">
+        <owl:disjointWith rdf:resource="http://www.example.org/cybersecurity#Asset"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#Vulnerability">
+        <owl:disjointWith rdf:resource="http://www.example.org/cybersecurity#Asset"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#Countermeasure">
+        <owl:disjointWith rdf:resource="http://www.example.org/cybersecurity#Threat"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.example.org/cybersecurity#Malware">
+        <owl:disjointWith rdf:resource="http://www.example.org/cybersecurity#Ransomware"/>
+    </rdf:Description>
+    
+    <!-- Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.example.org/cybersecurity#targets">
+        <rdfs:domain rdf:resource="http://www.example.org/cybersecurity#Threat"/>
+        <rdfs:range rdf:resource="http://www.example.org/cybersecurity#Asset"/>
+    </owl:ObjectProperty>
+    <owl:ObjectProperty rdf:about="http://www.example.org/cybersecurity#mitigates">
+        <rdfs:domain rdf:resource="http://www.example.org/cybersecurity#Countermeasure"/>
+        <rdfs:range rdf:resource="http://www.example.org/cybersecurity#Threat"/>
+    </owl:ObjectProperty>
+
+</rdf:RDF>
